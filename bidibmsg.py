@@ -488,12 +488,12 @@ def bidibmsg(s,updownstr):
         mp = [packet[0:packet[0]+1]]
         rs = s[2*packet[0]+2:]
         rp = packet[packet[0]+1:]
-    while rp[0]+2 <= len(rp):      # ms, mp are arrays of the part-messages
-        ms = ms+[rs[0:2*rp[0]+2]]
-        mp = mp+[rp[0:rp[0]+1]]
-        rs = rs[2*rp[0]+2:]
-        rp = rp[rp[0]+1:]
-    if len(ms) == 1:
+        while rp[0]+2 <= len(rp):      # ms, mp are arrays of the part-messages
+            ms = ms+[rs[0:2*rp[0]+2]]
+            mp = mp+[rp[0:rp[0]+1]]
+            rs = rs[2*rp[0]+2:]
+            rp = rp[rp[0]+1:]
+    else:
         ms = [s]
     msgnums = []
     outs = []
