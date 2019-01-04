@@ -495,6 +495,7 @@ def bidibmsg(s,updownstr):
             rp = rp[rp[0]+1:]
     else:
         ms = [s]
+        mp = [packet]
     msgnums = []
     outs = []
     for i in range(0,len(ms)):
@@ -513,6 +514,8 @@ while True:
         s = sys.stdin.readline()
     except EOFError:
         break               # ??
+    if s == '':
+        break
     if s[0] == '<':
         b = s[4:6]
         downstr = downstr + b
